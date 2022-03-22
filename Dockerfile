@@ -1,4 +1,4 @@
-FROM fluent/fluentd:v1.9.2-1.0
+FROM fluent/fluentd:v1.14.0-1.0
 ENV LOG_LEVEL="warn"
 ENV BASE_URI="https://log-api.newrelic.com/log/v1"
 
@@ -9,7 +9,7 @@ RUN apk add --no-cache --update --virtual .build-deps \
  && sudo fluent-gem install fluent-plugin-newrelic \
  && sudo gem sources --clear-all \
  && apk del .build-deps \
- && rm -rf /home/fluent/.gem/ruby/*/cache/*.gem
+ && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
 COPY fluent.conf /fluentd/etc/
 COPY entrypoint.sh /bin/

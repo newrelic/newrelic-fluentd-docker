@@ -6,7 +6,7 @@ USER root
 
 RUN apk add --no-cache --update --virtual .build-deps \
         sudo build-base ruby-dev \
- && sudo fluent-gem install fluent-plugin-newrelic \
+ && sudo fluent-gem install fluent-plugin-newrelic fluent-plugin-multi-format-parser \
  && sudo gem sources --clear-all \
  && apk del .build-deps \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem

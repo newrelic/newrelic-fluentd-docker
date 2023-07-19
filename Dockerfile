@@ -1,4 +1,4 @@
-FROM fluent/fluentd:v1.9.2-1.0
+FROM fluent/fluentd:v1.16.2-1.0
 ENV LOG_LEVEL="warn"
 ENV BASE_URI="https://log-api.newrelic.com/log/v1"
 
